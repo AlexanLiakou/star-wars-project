@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-star-yellow: #ffe81f;
+  --color-star-creme: #f5f5f5;
+  --color-star-green: #2AA198;
+  --color-star-blue: #268BD2;
+  --color-star-mustard: #859900;
+  --font-orbitron: "Orbitron", sans-serif;
+}
+
+body {
+  height: 100%;
+  display: block;
+}
