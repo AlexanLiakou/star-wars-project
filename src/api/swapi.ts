@@ -1,14 +1,33 @@
-import type {Character, Film, Planet, Species, Vehicle, Starship} from '../models/swapi';
+import type {Character, Film } from '../models/swapi';
 
-  export async function fetchStarWarsData() {
-  const [characters, films, vehicles, starships, planets, species] = await Promise.all([
-    fetch('https://swapi.info/api/people').then(r => r.json()) as Promise<Character[]>,
-    fetch('https://swapi.info/api/films').then(r => r.json())  as Promise<Film[]>,
-    fetch('https://swapi.info/api/vehicles').then(r => r.json())  as Promise<Vehicle[]>,
-    fetch('https://swapi.info/api/starships').then(r => r.json())  as Promise<Starship[]>,
-    fetch('https://swapi.info/api/planets').then(r => r.json())  as Promise<Planet[]>,
-    fetch('https://swapi.info/api/species').then(r => r.json())  as Promise<Species[]>,
-  ]);
+const BASE = 'https://swapi.info/api';
 
-  return { characters, films, vehicles, starships, planets, species };
+export const fetchCharacters = async (): Promise<Character[]> => {
+  const res = await fetch(`${BASE}/people`)
+  if (!res.ok) throw new Error('Failed to fetch characters')
+  return res.json();
+};
+
+export const fetchCharacter = async (id: string): Promise<Character> => {
+  const res = await fetch(`${BASE}/people/${id}`)
+  if (!res.ok) throw new Error(`Failed to fetch character ${id}`)
+  return res.json();
+};
+
+export const fetchFilms = async (): Promise<Film[]> => {
+  const res = await fetch(`${BASE}/films`)
+  if (!res.ok) throw new Error('Failed to fetch films')
+  return res.json();
+};
+
+export const fetchFilm = async (id: string): Promise<Film> => {
+  const res = await fetch(`${BASE}/films/${id}`)
+  if (!res.ok) throw new Error(`Failed to fetch film ${id}`)
+  return res.json();
+};
+
+export const fetchByUrl = async <T>(url: string): Promise<T> => {
+  const res = await fetch(url)
+  if (!res.ok) throw new Error(`Failed to fetch ${url}`)
+  return res.json();
 };

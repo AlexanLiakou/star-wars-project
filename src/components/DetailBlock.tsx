@@ -1,7 +1,7 @@
 type DetailBlockProps = {
     label: string;
     value: any;
-}
+};
 
 const DetailBlock = ({label, value} : DetailBlockProps) => {
   return (
@@ -11,7 +11,5 @@ const DetailBlock = ({label, value} : DetailBlockProps) => {
     </div>
   )
 }
-
-DetailBlock.propTypes = {}
 
 export default DetailBlock;
