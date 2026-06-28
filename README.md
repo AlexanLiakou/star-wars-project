@@ -13,6 +13,12 @@ A simple star wars themed application where one can browse through the character
 
 <br>
 
+## Demo
+
+[Star Wars](https://project-1bptz.vercel.app/)
+
+<br>
+
 ## Run Locally
 
 Clone the project
