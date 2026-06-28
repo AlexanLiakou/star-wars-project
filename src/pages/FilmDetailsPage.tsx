@@ -134,7 +134,7 @@ const FilmDetailsPage = () => {
                 </div>
             </div>
         </div>
-        <Link className='rounded-md p-5 !bg-star-creme text-black font-bold cursor-pointer hover:!bg-star-yellow' to="/films">← Back to Films</Link>       
+        <Link className='rounded-md p-5 bg-star-creme! text-black font-bold cursor-pointer hover:!bg-star-yellow' to="/films">← Back to Films</Link>       
     </section>
     );
 }
