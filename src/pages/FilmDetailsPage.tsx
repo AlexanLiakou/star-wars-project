@@ -22,7 +22,7 @@ const FilmDetailsPage = () => {
 
     return (
     <section>
-         <div className='flex items-center justify-between'>
+         <div className='flex items-center flex-col md:flex-row md:justify-between'>
             <h1 className="text-star-yellow text-xl md:text-5xl font-bold">{film?.title}</h1>
             <FavouriteButton
                 favourite={{
@@ -33,7 +33,7 @@ const FilmDetailsPage = () => {
             />
         </div>
         <div className='border border-star-mustard rounded-md p-8 my-10'>
-            <div className='grow flex flex-col gap-4 items-center md:items-start justify-center'>
+            <div className='grow flex flex-col gap-4 items-center justify-center'>
                 <h2 className="text-star-creme text-xl md:text-3xl font-bold text-center ">General Information</h2>
                 <DetailBlock label={'Released'} value={new Date(film!.release_date).getFullYear()}/>
                 <DetailBlock label={'Director'} value={film?.director}/>
@@ -120,7 +120,7 @@ const FilmDetailsPage = () => {
                 }            
             </div>
         </div>
-        <Link className='rounded-md p-5 bg-star-creme text-black font-bold cursor-pointer hover:bg-star-yellow' to="/films">← Back to Films</Link>       
+        <Link className='rounded-md p-5 !bg-star-creme text-black font-bold cursor-pointer hover:!bg-star-yellow' to="/films">← Back to Films</Link>       
     </section>
     );
 }

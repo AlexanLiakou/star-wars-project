@@ -30,13 +30,13 @@ const CharactersPage = () => {
     if (isError) return <p className='text-star-mustard text-5xl text-center font-bold'>{error?.message ?? 'Something went wrong'}</p>
 
     return (
-        <section>
+        <section className='overflow-hidden'>
             <h2 className="text-star-yellow text-xl md:text-3xl font-bold">Beloved Franchise Characters</h2>
-            <div className='my-10 w-100'>
+            <div className='my-10 w-full'>
                 <input
-                    className='bg-star-creme w-100 text-black p-3 rounded-md'
+                    className='bg-star-creme md:w-100 text-black p-3 rounded-md'
                     type="text"
-                    placeholder="Search characters by name..."
+                    placeholder="Search by name..."
                     value={searchTerm}
                     onChange={e => handleSearch(e.target.value)}
                 />
@@ -63,7 +63,7 @@ const CharactersPage = () => {
                         Failed to load some character details.
                     </p>
                 )}
-                <div className='grid grid-cols-1 md:grid-cols-4 gap-5 mb-5'>
+                <div className='flex flex-wrap gap-5 mb-5'>
                     {characters.length > 0 ? (
                         characters.map((character) => {
                             const homeworld = homeworldMap[character.homeworld];
@@ -86,25 +86,23 @@ const CharactersPage = () => {
             </div>
 
             {totalPages > 1 &&
-                <div className='mt-10 flex items-center justify-around md:justify-start md:gap-5'>
+                <div className='mt-10 flex items-center gap-2 justify-start md:gap-5'>
                     <button
-                        style={{ minWidth: '120px' }}
                         className='rounded-md p-5 bg-star-creme text-black font-bold cursor-pointer hover:bg-star-yellow disabled:cursor-not-allowed disabled:opacity-50 disabled:pointer-events-none'
                         onClick={() => setPage(p => p - 1)}
                         disabled={page === 1}
                     >
-                        Previous
+                        &#8592;
                     </button>
 
-                    <span className='text-star-creme text-lg'>Page {page} of {totalPages}</span>
+                    <span className='text-star-creme text-lg'>{page} / {totalPages}</span>
 
                     <button
-                        style={{ minWidth: '120px' }}
                         className='rounded-md p-5 bg-star-creme text-black font-bold cursor-pointer hover:bg-star-yellow disabled:cursor-not-allowed disabled:opacity-50 disabled:pointer-events-none'
                         onClick={() => setPage(p => p + 1)}
                         disabled={page === totalPages}
                     >
-                        Next
+                        &#8594;
                     </button>
                 </div>
             }

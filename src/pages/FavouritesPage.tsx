@@ -13,7 +13,7 @@ const FavouritesPage = () => {
   return (
     <section>
       <h2 className='text-star-yellow text-xl md:text-3xl font-bold'>Your Favourites</h2>
-      <div className='grid grid-cols-1 md:grid-cols-4 gap-5 mt-10'>
+      <div className='flex flex-wrap gap-5 mb-5'>
         {favourites.map(fav => (
           <div key={`${fav.type}-${fav.id}`} className='flex flex-col gap-3'>
             <Link

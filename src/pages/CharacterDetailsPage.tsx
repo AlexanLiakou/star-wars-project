@@ -22,7 +22,7 @@ const CharacterDetailsPage = () => {
 
     return (
     <section>
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center flex-col md:flex-row md:justify-between'>
             <h1 className="text-star-yellow text-xl md:text-5xl font-bold">{character?.name}</h1>
             <FavouriteButton
                 favourite={{
@@ -92,7 +92,7 @@ const CharacterDetailsPage = () => {
                 }
             </div>
         </div>
-        <Link className='rounded-md p-5 bg-star-creme text-black font-bold cursor-pointer hover:bg-star-yellow' to="/characters">← Back to Characters</Link>  
+        <Link className='rounded-md p-5 !bg-star-creme text-black font-bold cursor-pointer hover:!bg-star-yellow' to="/characters">← Back to Characters</Link>  
     </section>
     );
 }
