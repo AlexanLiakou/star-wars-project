@@ -7,10 +7,9 @@ import { useFetchUrlData} from './useFetchUrlData';
 
 const PAGE_SIZE = 10
 
-// ─── List (paginated client-side) ────────────────────────────────────────────
+// List
 // Fetches all characters once and caches them under ['characters'].
-// Pagination is handled by slicing the cached array — no extra network
-// requests when changing pages after the first load.
+// Pagination is handled by slicing the cached array 
 
 export const useCharacters = (page: number = 1) => {
   const query = useQuery({
@@ -31,7 +30,7 @@ export const useCharacters = (page: number = 1) => {
   }
 };
 
-// ─── Single character ────────────────────────────────────────────────────────
+// Single character
 
 export const useCharacter = (id: string) =>
   useQuery({
