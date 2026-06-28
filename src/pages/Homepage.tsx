@@ -21,7 +21,7 @@ const Homepage = () => {
     if (filmsLoading || charsLoading) return (
         <div className='fixed inset-0 flex flex-col items-center justify-center bg-black/80 z-50'>
             <Spinner />
-            <p className='text-star-yellow font-bold mt-4'>Loading films...</p>
+            <p className='text-star-yellow font-bold mt-4'>In a galaxy far away...</p>
         </div>
     );
 

@@ -19,7 +19,7 @@ const FilmDetailsPage = () => {
     );
 
     if (isError) return <p className='text-star-mustard text-5xl text-center font-bold'>{error?.message ?? 'Something went wrong'}</p>
-
+    console.log(film);
     return (
     <section>
          <div className='flex items-center flex-col md:flex-row md:justify-between'>
@@ -39,6 +39,8 @@ const FilmDetailsPage = () => {
                 <DetailBlock label={'Director'} value={film?.director}/>
                 <DetailBlock label={'Producer/s'} value={film?.producer}/>
             </div>
+            <h2 className="text-star-creme text-xl md:text-3xl font-bold text-center mt-10 mb-5">Introduction</h2>
+            <div className='flex items-center justify-center'><p style={{maxWidth: 500}} className='text-star-green text-lg'>{film?.opening_crawl}</p></div>
             <h2 className="text-star-creme text-xl md:text-3xl font-bold text-center mt-10 mb-5">Characters</h2>
             <div className='grow flex flex-col gap-4 items-center justify-center'>
                 {relations.characters.isLoading ? (
@@ -89,7 +91,7 @@ const FilmDetailsPage = () => {
                     <p className="text-star-yellow text-xl font-bold italic mt-5">No planets found</p>        
                 }
             </div>
-            <h2 className="text-star-creme text-xl md:text-3xl font-bold text-center mt-10 mb-5">Starships</h2>
+            {/* <h2 className="text-star-creme text-xl md:text-3xl font-bold text-center mt-10 mb-5">Starships</h2>
             <div className='grow flex flex-col gap-4 items-center justify-center'>
                 {relations.starships.isLoading ? (
                         <p className="text-star-yellow text-xl font-bold italic mt-5">Loading...</p> 
@@ -103,8 +105,8 @@ const FilmDetailsPage = () => {
                     :
                     <p className="text-star-yellow text-xl font-bold italic mt-5">No planets found</p>        
                 }            
-            </div>
-            <h2 className="text-star-creme text-xl md:text-3xl font-bold text-center mt-10 mb-5">Vehicles</h2>
+            </div> */}
+            {/* <h2 className="text-star-creme text-xl md:text-3xl font-bold text-center mt-10 mb-5">Vehicles</h2>
             <div className='grow flex flex-col gap-4 items-center justify-center'>
                 {relations.vehicles.isLoading ? (
                         <p className="text-star-yellow text-xl font-bold italic mt-5">Loading...</p> 
@@ -118,7 +120,7 @@ const FilmDetailsPage = () => {
                     :
                     <p className="text-star-yellow text-xl font-bold italic mt-5">No vehicles found</p> 
                 }            
-            </div>
+            </div> */}
         </div>
         <Link className='rounded-md p-5 !bg-star-creme text-black font-bold cursor-pointer hover:!bg-star-yellow' to="/films">← Back to Films</Link>       
     </section>
