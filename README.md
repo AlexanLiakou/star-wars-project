@@ -7,7 +7,7 @@ A simple star wars themed application where one can browse through the character
 
 ## Tech Stack
 
-**Main:** [React.js](https://react.dev/), [Typescript.js](https://www.typescriptlang.org/), [Vite](https://vite.dev/), [Tanstack Query](https://tanstack.com/query/latest)
+**Main:** [React.js](https://react.dev/), [Typescript.js](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [Tanstack Query](https://tanstack.com/query/latest)
 
 **Packages:** [React Spinners](https://www.npmjs.com/package/react-spinners)
 
